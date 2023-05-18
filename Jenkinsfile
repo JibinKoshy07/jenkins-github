@@ -1,28 +1,25 @@
 pipeline {
     agent any
+
     stages {
-
-        stage('Checkout Codebase') {
-            steps {
-            checkout scm: [$class: 'GitSCM',
-            userRemoteConfigs: [[credentialsId: 'Github_sshkey0',url: 'git@github.com:JibinKoshy07/jenkins-github.git']]]
-
-            }
-        }
         stage('Build') {
             steps {
-                sh 'pip install flask'
-
+                sh 'echo "Building"'
+                // Add your build steps here
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         sh './a.out'
-        //     }
-        // }
+
+        stage('Test') {
+            steps {
+                sh 'echo "Testing"'
+                // Add your test steps here
+            }
+        }
+
         stage('Deploy') {
             steps {
-                sh 'echo Done!'
+                sh 'echo "Deploying"'
+                // Add your deployment steps here
             }
         }
     }
