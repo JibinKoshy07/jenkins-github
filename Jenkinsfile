@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout Codebase') {
             steps {
             checkout scm: [$class: 'GitSCM',
-            userRemoteConfigs: [[credentialsId: 'Github_sshkey0',url: 'git@github.com:JibinKoshy07/jenkins-github.git', refspec: '+refs/heads/*:refs/remotes/origin/*']]]
+            userRemoteConfigs: [[credentialsId: 'Github_sshkey0',url: 'git@github.com:JibinKoshy07/jenkins-github.git']]]
 
             }
         }
